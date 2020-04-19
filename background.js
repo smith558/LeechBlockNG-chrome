@@ -348,10 +348,12 @@ function checkTab(id, url, isRepeat) {
 				|| (host2 == "www." + host1);
 	}
 
-	// Quick exit for about:blank and extension pages
-	if (url == "about:blank" || /^(chrome-)?extension/i.test(url)) {
-		log("Quick exit for " + url);
-		return false; // not blocked
+	// Quick exit for about:blank and chrome-extension
+	if (url == "about:blank" || url.startsWith("chrome-extension")) {
+		// Custom exception
+		let regex_exception = /blaaajhemilngeeffpbfkdjjoefldkok\/options.html|ifhndomfnbmggdgodaicfebeggdphlcn\/settings.html/
+		if (!(regex_exception.test(url)))
+			return false; // not blocked
 	}
 
 	if (!gTabs[id]) {
