@@ -35,7 +35,7 @@
 
 	"manifest_version": 2,
 
-	"name": "LeechBlock NG",
+	"name": "LeechBlock NG (Custom Edition for Regex matching)",
 
 	"optional_permissions": [
 		"<all_urls>"
