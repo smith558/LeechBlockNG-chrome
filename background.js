@@ -348,8 +348,8 @@ function checkTab(id, url, isRepeat) {
 				|| (host2 == "www." + host1);
 	}
 
-	// Quick exit for about:blank and chrome-extension
-	if (url == "about:blank" || url.startsWith("chrome-extension")) {
+	// Quick exit for about:blank and extension pages
+	if (url == "about:blank" || /^(chrome-)?extension/i.test(url)) {
 		// Custom exception
 		let regex_exception = /blaaajhemilngeeffpbfkdjjoefldkok\/options.html|ifhndomfnbmggdgodaicfebeggdphlcn\/settings.html/
 		if (!(regex_exception.test(url)))
